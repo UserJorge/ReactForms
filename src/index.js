@@ -11,7 +11,7 @@ ReactDOM.render(
    <div className='marco'>
    <div className='encabezado'>
      <img src='http://187.216.2.135/tutorias/logo/itesrc.png'/>
-   <h1>Encuesta a egresados</h1>
+   <h1>Catálogo de carreras</h1>
    </div>
    <MyQuizForm/>
    </div>
@@ -44,30 +44,16 @@ const options = [
 ]
 return(
   <form onSubmit={handleSubmit}>
-    <label for="Nombre">Nombre:</label>
-    <input type="text" placeholder='Nombre' name='name' value={name} onChange={(e=>setName(e.target.value))} className="form-control" />
-    <label for="Correo Electrónico">Correo Electrónico:</label>
+    <label for="name">Nombre de la carrera:</label>
+    <input type="text" placeholder='Nombre de la carrera' name='name' value={name} onChange={(e=>setName(e.target.value))} className="form-control" />
+    <label for="Correo Electrónico">Correo Electrónico del jefe de departamento:</label>
     <input type="email" placeholder='ejemplo@hotmail.com' name='email' className="form-control"/>
-    <label for="telefono">Teléfono:</label>
-    <input type="tel" placeholder='Teléfono' name='tel' className="form-control"/>
-    <label for="fecha">Fecha de egreso:</label>
-    <input type="date" placeholder='Fecha' name='date' className="form-control"></input>
-    <label for="sabinas">¿Vives actualmente en Sabinas?</label>
-    <div className='radios'>
-    <input type="radio" value="Si" name='sabinas' class="form-check-input position-static" ></input>
-    <label>Si</label>
-    <input type="radio" value="No" name='sabinas' class="form-check-input position-static" ></input>
-    <label>No</label><br/>
-    </div>
-  <label>Carrera:</label>
-   <Select options={options} value={selectItem} onChange={handleChangeSelect}  ></Select>
-   <input type="submit" className="btn btn-success"></input>
-  </form>
-
-
-
+    <label for="password">Contraseña</label>
+    <input type="password" placeholder='Contraseña' name='password' className='form-control'></input>
+    <input type="submit" className="btn btn-success"></input>
+ </form>
 );
- }
+}
 
 
 // If you want to start measuring performance in your app, pass a function
