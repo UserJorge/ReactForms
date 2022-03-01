@@ -13,9 +13,11 @@ ReactDOM.render(
      <img src='http://187.216.2.135/tutorias/logo/itesrc.png'/>
    <h1>Catálogo de carreras</h1>
    </div>
-   <MyQuizForm/>
+   <div className='d-flex flex-row'>
+   <MyQuizForm className="p-2"/>
+   <Tabla className="p-2"/>
    </div>
-   
+   </div>
  </React.Fragment>,
   document.getElementById('root')
 );
@@ -32,7 +34,6 @@ let [selectItem,setSelectItem]=useState();
 let handleChangeSelect=(event)=>{
 const selectIt=event.target.value;
 setSelectItem(selectIt);
-
 }
 const handleSubmit=(event)=>{event.preventDefault();alert('tu eres '+name+' de la carrera '+selectItem.value);}
 const options = [
@@ -42,20 +43,37 @@ const options = [
   { value: 'Ingeniería Industrial', label: 'Ingeniería Industrial' },
   { value: 'Ingeniería Electromecánica', label: 'Ingeniería Electromecánica' }
 ]
-return(
+return (
   <form onSubmit={handleSubmit}>
     <label for="name">Nombre de la carrera:</label>
     <input type="text" placeholder='Nombre de la carrera' name='name' value={name} onChange={(e=>setName(e.target.value))} className="form-control" />
-    <label for="Correo Electrónico">Correo Electrónico del jefe de departamento:</label>
+    <label for="Correo Electrónico">Correo electrónico del jefe de departamento:</label>
     <input type="email" placeholder='ejemplo@hotmail.com' name='email' className="form-control"/>
     <label for="password">Contraseña</label>
     <input type="password" placeholder='Contraseña' name='password' className='form-control'></input>
-    <input type="submit" className="btn btn-success"></input>
+    <input type="submit" className="btn btn-success" ></input>
  </form>
 );
 }
 
+function Tabla (){
 
+  return(
+<table className='table table-striped '>
+  <tr>
+  <th scope='col'>Nombre de carrera</th>
+  <th scope='col'>Correo electrónico</th>   
+  <th scope='col'>Contraseña</th>
+  </tr>
+<tr>
+  <td>Sistamas</td>
+  <td>sistemas@rcarbonifera.tecnm.mx</td>
+  <td>ciscoAdmin</td>
+</tr>
+</table>
+);
+
+}
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
