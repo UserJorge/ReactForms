@@ -63,15 +63,17 @@ form>input[type=text],input[type=tel],input[type=date],input[type=email]{
   padding: 10px;
   background-color: #0D5D5D;
   background-repeat: no-repeat;
-  
 }
 .encabezado>img{
   mask-repeat: no-repeat;
 }
 .marco{
-
   background-image: url('http://187.216.2.135/tutorias/logo/svgbg.svg');
 }
 label{
   color:white;
+}
+.Link{
+  color:white;
+  text-decoration: none;
 }
